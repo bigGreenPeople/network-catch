@@ -17,25 +17,25 @@
 //     console.log("Matched rules:", rules);
 // });
 
-var count = 0
-function toPopup() {
-    alert('to popup!')
-}
+var imageSet = new Set();
+
 // console.log("This is a declarativeNetRequest!")
 chrome.declarativeNetRequest.onRuleMatchedDebug.addListener(event => {
     // console.log("Rule matched debug info:", event.request.type);
     // console.log("Rule matched debug info:", event.request.url);
     // 发送消息给 popup 页面
-    chrome.runtime.sendMessage({ greeting: "Hello from background" }, response => {
-        console.log("Response from popup:", event.request.url);
-    });
+    imageSet.add(event.request.url);
+    // chrome.runtime.sendMessage({ greeting: event.request.url });
 });
 
 
 // 监听来自 popup 页面的消息
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
-    console.log("Message received in background page:", message);
+    // console.log("Message received in background page:", message);
     // 在这里处理消息，并根据需要发送回复
+    if (message.action === "getImages") {
+
+        console.log("Message received in background page:", imageSet);
+        sendResponse(Array.from(imageSet));
+    }
 });
-
-

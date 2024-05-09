@@ -1,13 +1,62 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
- -->    <script src="popup.js"> </script>
+    <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+ -->
+    <script src="popup.js"> </script>
 </head>
+<style>
+    /* 固定图片大小 */
+    .image-item img {
+        width: 100px;
+        height: 100px;
+    }
+
+    /* 将 image-item 元素设置为 inline-block，使其水平排列 */
+    .image-item {
+        display: inline-block;
+        margin-right: 10px;
+        cursor: pointer;
+        position: relative;
+        /* 鼠标指针样式为手型 */
+        /* 添加间距 */
+    }
+
+    /* 图片被选中时的样式 */
+    .selected {
+        opacity: 0.5;
+        /* 设置透明度 */
+        /* 设置背景图片 */
+        /* border: 2px solid blue; */
+        background-size: contain;
+        /* 适应容器 */
+        background-position: center;
+        /* 居中显示 */
+        /* 添加边框 */
+    }
+</style>
+
 <body style="width:300px ;height:300px">
-    <h1>数字改变</h1>
-    <input type="text" id="input" value="0">
-    <button id="btn">+1</button>
+    <h1>image list 1s</h1>
+    <div id="image-list">
+        <div class="image-item selected" onclick="toggleSelected(this)">
+            <img
+                src="https://p6-sign.douyinpic.com/tos-cn-i-0813/oEnVACBuQClK7IDESb9fA7DAR0GKvgGXArAAem~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8SKwQppp1GpwqUgThzTkT6DRedI%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
+            <img style="position: absolute; width: 50px; height: 50px;margin: 25px 25px;left: 0px;" src="image/yes.png">
+        </div>
+        <div class="image-item selected"  onclick="toggleSelected(this)">
+            <img
+                src="https://p26-sign.douyinpic.com/tos-cn-i-0813/owDpHQK9ZIZ9AU5ADm1g7BnceybAACHAAQBfAO~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8H%2FH964PU25ZCaX5uRzQrcdNJFc%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
+            <img style="position: absolute; width: 50px; height: 50px;margin: 25px 25px;left: 0px;" src="image/yes.png">
+        </div>
+        <div class="image-item"  onclick="toggleSelected(this)">
+            <img
+                src="https://p26-sign.douyinpic.com/tos-cn-i-0813/owDpHQK9ZIZ9AU5ADm1g7BnceybAACHAAQBfAO~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8H%2FH964PU25ZCaX5uRzQrcdNJFc%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
+        </div>
+    </div>
+
 </body>
+
 </html>
