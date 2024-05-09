@@ -9,7 +9,7 @@
 </head>
 <style>
     /* 固定图片大小 */
-    .image-item img {
+    .image-item .o-image {
         width: 100px;
         height: 100px;
     }
@@ -36,24 +36,23 @@
         /* 居中显示 */
         /* 添加边框 */
     }
+
+    .bg-img {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        margin: 25px 25px;
+        left: 0px;
+    }
 </style>
 
-<body style="width:300px ;height:300px">
+<body style="width:220px ;height:300px">
     <h1>image list 1s</h1>
+    <button id="download">下载</button>
     <div id="image-list">
-        <div class="image-item selected" onclick="toggleSelected(this)">
-            <img
-                src="https://p6-sign.douyinpic.com/tos-cn-i-0813/oEnVACBuQClK7IDESb9fA7DAR0GKvgGXArAAem~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8SKwQppp1GpwqUgThzTkT6DRedI%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
-            <img style="position: absolute; width: 50px; height: 50px;margin: 25px 25px;left: 0px;" src="image/yes.png">
-        </div>
-        <div class="image-item selected"  onclick="toggleSelected(this)">
-            <img
-                src="https://p26-sign.douyinpic.com/tos-cn-i-0813/owDpHQK9ZIZ9AU5ADm1g7BnceybAACHAAQBfAO~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8H%2FH964PU25ZCaX5uRzQrcdNJFc%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
-            <img style="position: absolute; width: 50px; height: 50px;margin: 25px 25px;left: 0px;" src="image/yes.png">
-        </div>
-        <div class="image-item"  onclick="toggleSelected(this)">
-            <img
-                src="https://p26-sign.douyinpic.com/tos-cn-i-0813/owDpHQK9ZIZ9AU5ADm1g7BnceybAACHAAQBfAO~tplv-dy-cropcenter:300:400.png?x-expires=1715256000&amp;x-signature=8H%2FH964PU25ZCaX5uRzQrcdNJFc%3D&amp;from=715538335&amp;s=PackSourceEnum_DOUYIN_REFLOW&amp;se=true&amp;sh=300_400&amp;sc=cover&amp;l=202405091445456B0E64B05BF18704952F&amp;biz_tag=aweme_video">
+        <div class="image-item" onclick="toggleSelected(this)">
+            <img class="o-image"
+                src="https://p3-pc-sign.douyinpic.com/tos-cn-p-0015/ogIilAIPDGnJgYAEI3WABqCafCeO9mjD5l8Sbj~tplv-dy-cropcenter:323:430.jpeg?biz_tag=pcweb_cover&from=3213915784&s=PackSourceEnum_FAVORITE&sc=cover&se=true&sh=323_430&x-expires=2030616000&x-signature=21ziyi7zSP6sxdc%2F8p6kVgjg7Sg%3D">
         </div>
     </div>
 
