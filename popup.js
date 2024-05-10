@@ -15,7 +15,9 @@ function updateImageList(imageSet) {
         imageElement.src = imageUrl;
         imageElement.classList.add('o-image');
 
-
+        imageElement.addEventListener('dragstart', function(event) {
+            event.preventDefault();
+        }, false);
         // 创建列表项
         const listItem = document.createElement('div');
         listItem.classList.add('image-item');
